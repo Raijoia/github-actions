@@ -19,5 +19,5 @@ jobs:
         run: echo Hello, world!
 
       #Runs a list files command
-      -name: Run a list files
+      - name: Run a list files
         run: ls -la
