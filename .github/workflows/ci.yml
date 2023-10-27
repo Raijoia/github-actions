@@ -12,3 +12,5 @@ jobs:
 
       - name: Run Linter
         run: yarn lint
+      - name: Run Linter
+        run: yarn lint
