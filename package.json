@@ -1,28 +1,32 @@
 {
   "name": "github-actions",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Rai Joia <megac154@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "eslint-plugin-prettier": "4.0.0",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
   },
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf build && next build && mv out build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "deploy:prod": "yarn deploy --prod --token=$VERCEL_TOKEN",
-    "deploy": "yarn build && npx vercel ./build --confirm --no-clipboard"
+    "deploy:prod": "yarn deploy:staging --prod",
+    "deploy:staging": "yarn deploy --token=$VERCEL_TOKEN",
+    "deploy": "yarn build && npx vercel ./build --confirm --no-clipboard",
+    "deploy:preview": "node ./scripts/pullRequestPreview"
   },
   "devDependencies": {
-    "eslint": "8.52.0",
-    "eslint-config-next": "14.0.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "prettier": "^3.0.3"
+    "eslint": "8.17.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2",
+    "vercel": "^25.0.0"
   }
 }
